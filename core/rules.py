@@ -51,8 +51,7 @@ def rule_mul_zero_right(expr):
     if (isinstance(expr, BinOp)
             and expr.op == "*"
             and isinstance(expr.right, Num)
-            and expr.right.value == 0
-    ):
+            and expr.right.value == 0):
         return Num(0)
     return None
 
@@ -60,9 +59,8 @@ def rule_mul_zero_left(expr):
     # 0 * x -> 0
     if(isinstance(expr, BinOp)
             and expr.op == "*"
-            and isinstance(expr.right, Num)
-            and expr.left.value == 0
-    ):
+            and isinstance(expr.left, Num)
+            and expr.left.value == 0):
         return Num(0)
     return None
 
